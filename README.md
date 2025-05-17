@@ -1,54 +1,39 @@
-# React + TypeScript + Vite
+# React JS - Vite - SCSS - LOBOX
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### PRODUCTION
 
-Currently, two official plugins are available:
+https://lobox-nine.vercel.app/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Project Description
 
-## Expanding the ESLint configuration
+This is a full-stack application developed with React, Vite, and Sass.  
+The app stores its data inside a JSON file within the project, ensuring data persistence even after refreshing the page.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Features:
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+- On the left side of the screen, there are two input fields where users can enter information for each option.
+- In the center, there is a multi-select dropdown component implemented for selecting multiple options.
+- On the right side, a list of items is displayed with the ability to remove items from the list.
+- Added and removed options are saved and retained thanks to the JSON-based data storage.
+
+Data persistence is maintained through storing and reading the information from the JSON file within the project.
+
+## Getting Started
+
+2. Install dependencies:
+
+```bash
+  npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+3. Start the project:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- Development: `npm run dev`
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+- Production: `npm run start`
+
+## Notes
+
+All task requirements have been covered
+
+### MATIN VILAN
