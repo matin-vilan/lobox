@@ -1,0 +1,11 @@
+// primary ...
+$btn-primary-bg: #007bff;
+$btn-primary-hover-bg: darken($btn-primary-bg, 10%);
+
+// secondary ...
+$btn-secondary-bg: #6c757d;
+$btn-secondary-hover-bg: darken($btn-secondary-bg, 10%);
+
+// danger but i dont use this
+$btn-danger-bg: #dc3545;
+$btn-danger-hover-bg: darken($btn-danger-bg, 10%);
