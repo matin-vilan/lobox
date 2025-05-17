@@ -6,6 +6,16 @@
 
 .wrappersGap {
   gap: 4rem;
+
+  @media screen and (max-width: 1124px) {
+    flex-direction: column;
+  }
+}
+
+.inputWrapper {
+  @media screen and (max-width: 576px) {
+    flex-direction: column;
+  }
 }
 
 .list {

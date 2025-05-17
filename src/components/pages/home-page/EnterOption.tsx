@@ -4,6 +4,7 @@ import Button from "@components/ui/button/Button";
 import Flex from "@components/ui/flex/Flex";
 import Input from "@components/ui/input/Input";
 import { useContext } from "react";
+import styles from "./styles.module.scss";
 
 const EnterOption = () => {
   const { options, setOptions } = useContext(OptionsContext);
@@ -20,7 +21,7 @@ const EnterOption = () => {
   return (
     <form action={onSubmit}>
       <Flex direction="column">
-        <Flex>
+        <Flex className={styles.inputWrapper}>
           <Input
             name="label"
             placeholder="Enter New Item Label ..."
