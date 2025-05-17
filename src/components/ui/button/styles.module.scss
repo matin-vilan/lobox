@@ -1,0 +1,34 @@
+.button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all ease 0.25s;
+}
+
+.primary {
+  background-color: $btn-primary-bg;
+
+  &:hover {
+    background-color: $btn-primary-hover-bg;
+  }
+}
+
+.secondary {
+  background-color: $btn-secondary-bg;
+
+  &:hover {
+    background-color: $btn-secondary-hover-bg;
+  }
+}
+
+.danger {
+  background-color: $btn-danger-bg;
+
+  &:hover {
+    background-color: $btn-danger-hover-bg;
+  }
+}
