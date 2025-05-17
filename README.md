@@ -15,6 +15,7 @@ The app stores its data inside a JSON file within the project, ensuring data per
 - In the center, there is a multi-select dropdown component implemented for selecting multiple options.
 - On the right side, a list of items is displayed with the ability to remove items from the list.
 - Added and removed options are saved and retained thanks to the JSON-based data storage.
+- Git Flow: Not implemented. The project contains only a single branch
 
 Data persistence is maintained through storing and reading the information from the JSON file within the project.
 
