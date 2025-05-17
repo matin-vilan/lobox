@@ -7,3 +7,42 @@
 .wrappersGap {
   gap: 4rem;
 }
+
+.list {
+  background-color: white;
+  padding: 0.3rem 1rem;
+  border-radius: 12px;
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  .listItem {
+    border: 1px solid lightgray;
+    padding: 0.5rem;
+    color: black;
+    text-align: start;
+    border-radius: 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .title {
+    width: 100%;
+    color: black;
+    text-align: start;
+  }
+  .delete {
+    padding: 0.2rem;
+    font-size: 12px;
+    border: 1px solid lightgray;
+    text-align: end;
+    border-radius: 100%;
+    cursor: pointer;
+    transition: all ease 0.3s;
+    &:hover {
+      background-color: lightgray;
+      transition: all ease 0.3s;
+      border: 1px solid red;
+    }
+  }
+}

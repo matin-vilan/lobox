@@ -4,6 +4,7 @@ import styles from "./styles.module.scss";
 export interface ISelectOptions {
   label: string;
   value: string;
+  id: string;
 }
 
 interface Props {
@@ -21,6 +22,9 @@ const MultiSelect = ({
   onChange,
   value,
 }: Props) => {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const containerRef = useRef<HTMLDivElement | null>(null);
+
   const handleSelect = (val: string) => {
     if (value.includes(val)) {
       onChange(value.filter((v) => v !== val));
@@ -38,21 +42,29 @@ const MultiSelect = ({
     }
   }, []);
 
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
+    if (e.key === "Enter") {
+      setIsOpen((prev) => !prev);
+    }
+  };
+
   useEffect(() => {
     document.addEventListener("mousedown", handleClickOutside); // check any mouse click
     return () => document.removeEventListener("mousedown", handleClickOutside); // this is the clean up function
   }, [handleClickOutside]);
 
-  const [isOpen, setIsOpen] = useState<boolean>(false);
-  const containerRef = useRef<HTMLDivElement | null>(null);
-
   return (
-    <div className={styles.selectContainer} ref={containerRef}>
+    <div
+      className={styles.selectContainer}
+      ref={containerRef}
+      tabIndex={0}
+      onKeyDown={handleKeyDown}
+    >
       <div className={styles.select} onClick={() => setIsOpen((prev) => !prev)}>
         {value.length > 0
           ? value
               .map((val) => {
-                const option = options.find((o) => o.value === val);
+                const option = options.find((o) => o.id === val);
                 return option?.label;
               })
               .join(", ")
@@ -62,14 +74,14 @@ const MultiSelect = ({
         <div className={styles.dropdown}>
           {options.map((option, i) => (
             <div
-              key={`${option.value}_${i}`}
+              key={`${option.id}_${i}`}
               className={`${styles.option} ${
-                value.includes(option.value) ? styles.selected : ""
+                value.includes(option.id) ? styles.selected : ""
               }`}
-              onClick={() => handleSelect(option.value)}
+              onClick={() => handleSelect(option.id)}
             >
               {option.label}
-              {value.includes(option.value) && (
+              {value.includes(option.id) && (
                 <span className={styles.check}>✔️</span>
               )}
             </div>

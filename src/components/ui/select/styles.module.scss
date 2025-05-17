@@ -7,6 +7,7 @@ $active: #e0eaff;
 .selectContainer {
   position: relative;
   width: 240px;
+
   font-size: 15px;
   font-family: system-ui, sans-serif;
 
@@ -43,7 +44,7 @@ $active: #e0eaff;
     border: $border;
     border-radius: $radius;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.06);
-    max-height: 260px;
+    max-height: 200px;
     overflow-y: auto;
     z-index: 1000;
     padding: 0.3rem 0;

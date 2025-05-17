@@ -1,10 +1,20 @@
+import { writeOption } from "@/api/optionsApi";
+import { OptionsContext } from "@/contexts/optionsContext";
 import Button from "@components/ui/button/Button";
 import Flex from "@components/ui/flex/Flex";
 import Input from "@components/ui/input/Input";
+import { useContext } from "react";
 
 const EnterOption = () => {
-  const onSubmit = (formData: FormData) => {
-    console.log({ formData: Object.fromEntries(formData) });
+  const { options, setOptions } = useContext(OptionsContext);
+
+  const onSubmit = async (formData: FormData) => {
+    const body = {
+      label: formData.get("label") as string,
+      value: formData.get("value") as string,
+    };
+    const result = await writeOption(body);
+    setOptions([...options, result]);
   };
 
   return (
